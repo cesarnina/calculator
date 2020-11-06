@@ -5,7 +5,6 @@ export default class Main extends Component {
     return (
       <div id='main'>
         <h1>Calculator!</h1>
-
       </div>
     )
   };
