@@ -1,7 +1,7 @@
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
-  entry: ['@babel/polyfill', './client/index.js'],
+  entry: ['@babel/polyfill', './src/index.js'],
   module: {
     rules: [
       {
@@ -10,7 +10,11 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
-      }
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ]
   },
   output: {
