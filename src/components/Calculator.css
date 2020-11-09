@@ -1,51 +1,50 @@
-.input {
-height: 4em;
-display: flex;
-justify-content: flex-end;
-align-items: center;
-font-weight: bold;
-font-size: 1.4em;
-background-color: #000000;
-color: #ffffff;
-padding: 0.5em;
+.calc-wrapper {
+  border: 5px solid #666;
+  margin-right: 2em;
+  border-style: outset;
 }
 
-/* .calc-Wrapper {
-  width: 400px;
-  height: 600px;
-  border: 5px solid red;
-} */
-
-.row {
+.input {
+  height: 4em;
   display: flex;
-  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.4em;
+  background-color: #000;
+  color: #fff;
+  padding: 8px;
+}
+  
+button {
+  height: 3em;
+  width: 3em;
+  font-size: 1.4em;
+}
+
+.zero {
+  width: 6em;
 }
 
 .arithmetic {
   background-color: #ff8400;
-  color: white;
+  color: #fff;
   border-top-color: #faa953;
   border-left-color: #faa953;
 }
 
 .signs {
-  background-color: #333333;
-  color: white;
+  background-color: #333;
+  color: #fff;
 }
 
 .numbers {
-  background-color: #666666;
-  color: white;
-}
-
-button {
-  height: 3em;
-  width: 3em;
-  font-size: 2em;
+  background-color: #666;
+  color: #fff;
 }
 
 .numbers:hover, .signs:hover {
-  background-color: #999999;
+  background-color: #999;
 }
 
 .arithmetic:hover {

@@ -4,4 +4,6 @@ body {
 #myTitle {
   Text-align: center;
   color: #ff8400;
+  font-size: 3.5em;
+  font-style: italic;
 }
