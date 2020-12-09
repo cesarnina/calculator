@@ -1,6 +1,6 @@
 const PORT = process.env.PORT || 5000
 const app = require('./app')
-const {db} = require('./db')
+const { db } = require('./db')
 
 const start = async () => { 
   try {
@@ -13,7 +13,7 @@ const start = async () => {
   
     `))
   } catch (error) {
-     console.error(error)
+      console.error(error)
   }
 };
 

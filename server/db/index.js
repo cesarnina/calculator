@@ -2,7 +2,7 @@
 // with your models.
 
 const db = require('./database');
-const Todo = require('./models/Calculator');
+const Calculator = require('./models/Calculator');
 
 module.exports = {
   db,
