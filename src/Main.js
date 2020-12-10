@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import  Calculator from "./components/Calculator";
 import History from "./components/History";
 import { evaluate } from "mathjs";
+import axios from 'axios'
+
 import "./Main.css";
 
 export default class Main extends Component {
@@ -22,24 +24,40 @@ export default class Main extends Component {
     })
   }
 
-  addToInput(value) {
-    this.setState({
-      input: this.state.input + value,
-    })
-  }
+  // addToInput(value) {
+  //   const { input } = this.state
+  //   const doNotStartWith = ' / * )'
+  //   if (input.length === 0 && doNotStartWith.includes(value)) return;
+  //   if (value === ')' && !input.includes('(')) return;
+  //   this.setState({
+  //     input: input + value,
+  //   })
+  // }
 
-  handleEqual() {
-    if (this.state.history.length > 9) {
-      const lastTenCalc = this.state.history
-      lastTenCalc.pop()
-      this.setState({
-        history: lastTenCalc,
-      })
-    }
-    this.setState({
-      history: [...[`${this.state.input} = ${evaluate(this.state.input)}`], ...this.state.history],
-      input: evaluate(this.state.input),
-    })
+  // async handleEqual() {
+  //   if (this.state.input.length === 0) return;
+  //   const calc = `${this.state.input} = ${evaluate(this.state.input)}`
+  //   await axios.post('/api/calculator', {
+  //     calculation: calc
+  //   })
+  //   while (this.state.history.length > 9) {
+  //     const oldCalc = this.state.history.shift()
+  //     await axios.delete(`api/calculator/${oldCalc.id}`)
+  //   }
+  //   const { data } = await axios.get('/api/calculator')
+  //   this.setState({
+  //     history: data,
+  //     input: evaluate(this.state.input)
+  //   })
+  // }
+
+  async componentDidMount() {
+    const { data } = await axios.get('/api/calculator')
+    this.setState({ history: data })
+    setInterval(async ()=> {
+      const { data } = await axios.get('/api/calculator')
+      this.setState({ history: data })
+    }, 5000)
   }
 
   render () {
