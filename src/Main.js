@@ -24,15 +24,15 @@ export default class Main extends Component {
     })
   }
 
-  // addToInput(value) {
-  //   const { input } = this.state
-  //   const doNotStartWith = ' / * )'
-  //   if (input.length === 0 && doNotStartWith.includes(value)) return;
-  //   if (value === ')' && !input.includes('(')) return;
-  //   this.setState({
-  //     input: input + value,
-  //   })
-  // }
+  addToInput(value) {
+    const { input } = this.state
+    const doNotStartWith = ' / * )'
+    if (input.length === 0 && doNotStartWith.includes(value)) return;
+    if (value === ')' && !input.includes('(')) return;
+    this.setState({
+      input: input + value,
+    })
+  }
 
   // async handleEqual() {
   //   if (this.state.input.length === 0) return;
