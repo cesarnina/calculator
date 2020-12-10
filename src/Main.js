@@ -34,22 +34,22 @@ export default class Main extends Component {
     })
   }
 
-  // async handleEqual() {
-  //   if (this.state.input.length === 0) return;
-  //   const calc = `${this.state.input} = ${evaluate(this.state.input)}`
-  //   await axios.post('/api/calculator', {
-  //     calculation: calc
-  //   })
-  //   while (this.state.history.length > 9) {
-  //     const oldCalc = this.state.history.shift()
-  //     await axios.delete(`api/calculator/${oldCalc.id}`)
-  //   }
-  //   const { data } = await axios.get('/api/calculator')
-  //   this.setState({
-  //     history: data,
-  //     input: evaluate(this.state.input)
-  //   })
-  // }
+  async handleEqual() {
+    if (this.state.input.length === 0) return;
+    const calc = `${this.state.input} = ${evaluate(this.state.input)}`
+    await axios.post('/api/calculator', {
+      calculation: calc
+    })
+    while (this.state.history.length > 9) {
+      const oldCalc = this.state.history.shift()
+      await axios.delete(`api/calculator/${oldCalc.id}`)
+    }
+    const { data } = await axios.get('/api/calculator')
+    this.setState({
+      history: data,
+      input: evaluate(this.state.input)
+    })
+  }
 
   async componentDidMount() {
     const { data } = await axios.get('/api/calculator')
