@@ -6,8 +6,8 @@ const History = (props) => {
     <div className="history-wrapper">
       <h2>Previous Calculation</h2>
       {
-      props.history.map((ele, index) => {
-        return <p key={index}>{ele}</p>
+      props.history.map((ele) => {
+        return <p key={ele.id}>{ele.calculation}</p>
       })
       }
     </div>
