@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const pkg = require('../../package.json')
+const pkg = require('../../package.json');
 
 // The sole purpose of this module is to establish a connection to your
 // Postgres database by creating a Sequelize instance (called `db`).

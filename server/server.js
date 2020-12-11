@@ -1,10 +1,10 @@
-const PORT = process.env.PORT || 5000
-const app = require('./app')
-const { db } = require('./db')
+const PORT = process.env.PORT || 5000;
+const app = require('./app');
+const { db } = require('./db');
 
 const start = async () => { 
   try {
-    await db.sync()
+    await db.sync();
     app.listen(PORT, () => console.log("\x1b[36m%s\x1b[0m",`
   
           Listening on port ${PORT}
@@ -13,8 +13,8 @@ const start = async () => {
   
     `))
   } catch (error) {
-      console.error(error)
+      console.error(error);
   }
 };
 
-start()
+start();

@@ -20,7 +20,7 @@ app.use('/api', require('./api'));
 
 // Send client to index.html for any other requests
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'))
+  res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 module.exports = app;
