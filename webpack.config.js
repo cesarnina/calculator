@@ -1,5 +1,7 @@
+const isDev = process.env.NODE_ENV === 'development'
+
 module.exports = {
-  mode: 'development',
+  mode: isDev ? 'development' : 'production',
   devtool: 'source-map',
   entry: ['@babel/polyfill', './src/index.js'],
   module: {
