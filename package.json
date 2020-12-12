@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run build-watch & npm run start-server",
     "build-watch": "webpack --watch",
-    "start-server": "nodemon --watch server -e js,html,css server/server.js"
+    "start-server": "nodemon --watch server -e js,html,css server/index.js"
   },
   "author": "Cesar",
   "license": "ISC",
